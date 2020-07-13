@@ -1,0 +1,10 @@
+*.toc
+*.gz
+*.log
+*.bbl
+*.aux
+*.snm
+*.bak
+*.out
+*.nav
+*.blg
