@@ -5,77 +5,78 @@
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{graphicx}
+
 \author{Nico Fröhlich}
 \title{An introduction to graphical devices}
+
 \setbeamercovered{transparent} 
 \setbeamertemplate{navigation symbols}{} 
 \institute{Troblecodings} 
-\subject{IT} 
+\subject{IT}
+
 \begin{document}
 
 \begin{frame}
-\titlepage
+    \titlepage
 \end{frame}
 
 \begin{frame}{Quellen und further reading}
-\begin{itemize}
-\item Real-Time Rendering - Fourth Edition
-\item Sascha Willems (Github)
-\item Philip Hammer (@philiphammer0)
-\item Physically based rendering
-\end{itemize}
+    \begin{itemize}
+        \item Real-Time Rendering - Fourth Edition
+        \item Sascha Willems (Github)
+        \item Philip Hammer (@philiphammer0)
+        \item Physically based rendering
+    \end{itemize}
 \end{frame}
 
 \begin{frame}{Einführung}
-\begin{itemize}
-\item Berechnen von Matrizen
-\item Primär arithmetisch
-\item Erst seit wenigen Jahren Branching
-\item Bestehen aus vielen shader cores
-\item Warps verknüpfen die cores
-\end{itemize}
+    \begin{itemize}
+        \item Berechnen von Matrizen
+        \item Primär arithmetisch
+        \item Erst seit wenigen Jahren Branching
+        \item Bestehen aus vielen Shader Cores
+        \item Warps verknüpfen die Cores
+    \end{itemize}
 \end{frame}
 
-\begin{frame}{Shader cores}
-\begin{itemize}
-\item 3000 in RTX 2080
-\item Programmierbar
-\item Unabhängig voneinander
-\item Unabhängige write locations
-\item wenig cache
-\item keine branch prediction
-\end{itemize}
+\begin{frame}{Shader Cores}
+    \begin{itemize}
+        \item 3000 in RTX 2080
+        \item Programmierbar
+        \item Unabhängig voneinander
+        \item Unabhängige Write Locations
+        \item Wenig Cache
+        \item Keine Branch Prediction
+    \end{itemize}
 \end{frame}
 
 \begin{frame}{Warps}
-\begin{itemize}
-\item Fassen cores zusammen
-\item 32 cores pro warp
-\item Stall and Swap
-\item SIMD für GPUs
-\item Parallelismus
-\end{itemize}
+    \begin{itemize}
+        \item Fassen Cores zusammen
+        \item 32 Cores pro Warp
+        \item Stall and Swap
+        \item SIMD für GPUs
+        \item Parallelismus
+    \end{itemize}
 \end{frame}
 
 \begin{frame}{Warps - Beispiel}
-\begin{figure}[hbtp]
-\centering
-\includegraphics[scale=.14]{swap.png}
-\caption{Stall and Swap}
-\end{figure}
+    \begin{figure}[hbtp]
+        \centering
+        \includegraphics[scale=.14]{swap.png}
+        \caption{Stall and Swap}
+    \end{figure}
 \end{frame}
 
 \begin{frame}{Die Daten}
-\begin{figure}[hbtp]
-\centering
-\includegraphics[scale=.4]{data.png}
-\caption{Vertex daten}
-\end{figure}
-
+    \begin{figure}[hbtp]
+        \centering
+        \includegraphics[scale=.4]{data.png}
+        \caption{Vertex Daten}
+    \end{figure}
 \end{frame}
 
 \begin{frame}{Pipelines}
-
 \end{frame}
 
 \end{document}
