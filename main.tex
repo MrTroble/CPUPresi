@@ -7,7 +7,7 @@
 \usepackage{graphicx}
 
 \author{Nico Fröhlich}
-\title{Eine Einführung zu graphischen devices}
+\title{Advanced CPU design and optimization}
 
 \setbeamercovered{transparent} 
 \setbeamertemplate{navigation symbols}{} 
@@ -22,66 +22,33 @@
 
 \begin{frame}{Quellen und weiterführende Inhalte}
     \begin{itemize}
-        \item Real-Time Rendering - Fourth Edition
-        \item Sascha Willems (Github)
-        \item Philip Hammer (@philiphammer0)
-        \item Physically based rendering
+        \item Intel® 64 and IA-32 Architectures Software Developer’s Manual
+        \item Software Optimization Guide for AMD64 Processors
+        \item Intel® 64 and IA-32 Architectures Optimization Reference Manual
+        \item Chandler Carruth, Matt Godbolt, Andrei Alexandrescu ...
+        \item Mike Acton
     \end{itemize}
 \end{frame}
 
 \begin{frame}{Einführung}
+Das was alle CPUs gemeinsam haben:
     \begin{itemize}
-        \item Berechnen von Matrizen
-        \item Primär arithmetisch
-        \item Erst seit wenigen Jahren Branching
-        \item Bestehen aus vielen Shader Cores
-        \item Warps verknüpfen die Cores
+        \item Clock (Oszillator)
+        \item Fetch-Decode Cycle
+        \item Instruction Counter
     \end{itemize}
 \end{frame}
 
-\begin{frame}{Shader Cores}
-    \begin{itemize}
-        \item 3000 in RTX 2080
-        \item Programmierbar
-        \item Unabhängig voneinander
-        \item Unabhängige Write Locations
-        \item Wenig Cache
-        \item Keine Branch Prediction
-    \end{itemize}
+\begin{frame}{Fetch - Decode - Execute Cycle}
+\begin{figure}[hbtp]
+\centering
+\includegraphics[scale=.4]{cpucycle.png}
+\caption{CPU Cycle}
+\end{figure}
 \end{frame}
 
-\begin{frame}{Warps}
-    \begin{itemize}
-        \item Fassen Cores zusammen
-        \item 32 Cores pro Warp
-        \item Stall and Swap
-        \item SIMD für GPUs
-        \item Parallelismus
-    \end{itemize}
-\end{frame}
-
-\begin{frame}{Warps - Beispiel}
-    \begin{figure}[hbtp]
-        \centering
-        \includegraphics[scale=.14]{swap.png}
-        \caption{Stall and Swap}
-    \end{figure}
-\end{frame}
-
-\begin{frame}{Die Daten}
-    \begin{figure}[hbtp]
-        \centering
-        \includegraphics[scale=.4]{data.png}
-        \caption{Vertex Daten}
-    \end{figure}
-\end{frame}
-
-\begin{frame}{Pipelines}
-    \begin{figure}[hbtp]
-        \centering
-        \includegraphics[scale=.4]{pipeline.png}
-        \caption{Vertex Daten}
-    \end{figure}
+\begin{frame}{Linked Lists}
+https://www.quick-bench.com/q/8GCHd74XnH1iguAkU8JmpRhgk9o
 \end{frame}
 
 \end{document}
