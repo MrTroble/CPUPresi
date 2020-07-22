@@ -27,6 +27,7 @@
         \item Intel® 64 and IA-32 Architectures Optimization Reference Manual
         \item Chandler Carruth, Matt Godbolt, Andrei Alexandrescu ...
         \item Mike Acton
+        \item https://www.quick-bench.com/q/Ev6U1Owr7WKTbzyNgCol7vEJq4o
     \end{itemize}
 \end{frame}
 
@@ -54,11 +55,55 @@ Let's talk cache
 \includegraphics[scale=.3]{netburst.png}
 \caption{The Intel NetBurst Microarchitecture}
 \end{figure}
-
 \end{frame}
 
-\begin{frame}{Linked Lists}
-https://www.quick-bench.com/q/Ev6U1Owr7WKTbzyNgCol7vEJq4o
+\begin{frame}{Was passiert?}
+\begin{itemize}
+\item Die OOE zerlegt die gecacheten instructions
+\item Schaut nach was für memory genutzt wurde
+\item Fängt an die wahrscheinlichsten Sachen in den Cache zu laden
+\item Executed was er kann
+\item RU Updatet history und reordert instructions
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Cache misses}
+\begin{figure}[hbtp]
+\centering
+\includegraphics[scale=.5]{latency.png}
+\caption{I7 Messungen}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Continues Memory ist gut}
+\begin{columns}
+\begin{column}{0.5\textwidth}
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[scale=.6]{list.png}
+\caption{Linked Lists}
+\end{figure}
+
+\end{column}
+\begin{column}{0.5\textwidth}
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[scale=.6]{vec.png}
+\caption{Continues memory}
+\end{figure}
+
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Ergebnisse}
+\begin{figure}[hbtp]
+\centering
+\includegraphics[scale=.35]{benchmark.png}
+\caption{Quickbench ergebnisse}
+\end{figure}
 \end{frame}
 
 \end{document}
